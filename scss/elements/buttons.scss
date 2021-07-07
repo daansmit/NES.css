@@ -65,13 +65,19 @@
     opacity: 0.6;
   }
 
+  &.is-disabled:hover::after {
+    box-shadow: inset -4px -4px map-get($disabled-colors, "shadow");
+  }
+
   // Other styles
   // prettier-ignore
   $types:
     "primary" $background-color map-get($primary-colors, "normal") map-get($primary-colors, "hover") map-get($primary-colors, "shadow"),
     "success" $background-color map-get($success-colors, "normal") map-get($success-colors, "hover") map-get($success-colors, "shadow"),
     "warning" $base-color map-get($warning-colors, "normal") map-get($warning-colors, "hover") map-get($warning-colors, "shadow"),
-    "error" $background-color map-get($error-colors, "normal") map-get($error-colors, "hover") map-get($error-colors, "shadow");
+    "error" $background-color map-get($error-colors, "normal") map-get($error-colors, "hover") map-get($error-colors, "shadow"),
+    "purple" $background-color map-get($purple-colors, "normal") map-get($purple-colors, "hover") map-get($purple-colors, "shadow"),
+    "orange" $background-color map-get($orange-colors, "normal") map-get($orange-colors, "hover") map-get($orange-colors, "shadow");
 
   @each $type in $types {
     &.is-#{nth($type, 1)} {
